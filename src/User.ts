@@ -3,10 +3,10 @@
 // class: frame
 class User {
     // instance data
-    email: string = ""
-    password: string = "1234"
-    nickname: string = "hi4321"
-    age: number= 21
+    private email: string;
+    private password: string;
+    private nickname: string;
+    private age: number;
 
     // special method - constructor
     constructor(email: string, password: string, nickname: string, age: number) {
@@ -16,17 +16,22 @@ class User {
         this.age = age
     }
     // instance method
-    get_profile = () => {
-
+    
+    getEmail = () => {
+        return this.email
+    }
+    getAge = () => {
+        return this.age
+    }
+    getPassword = () => {
+        return this.password
+    }
+    changePassword = (newPassword: string) => {
+       return this.password = newPassword
     }
 }
 
 // object: user1, user2 ...
 
 // user1 instance
-const user1 = new User("asdasdasdasd@gmail.com", "1234", "haha", 12)
-console.log(user1.email)
-
-// user2 instance
-const user2 = new User("aaa@gmail.com", "1234", "hoho", 12)
-console.log(user2.email)
+export default User
