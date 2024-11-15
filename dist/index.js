@@ -8,32 +8,22 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
+const input_1 = require("./input");
+const node_fs_1 = __importDefault(require("node:fs"));
+const node_path_1 = __importDefault(require("node:path"));
 const app = () => __awaiter(void 0, void 0, void 0, function* () {
-    /*
-    const inputName1 = await input("What is your name?: ")
-    const nameFilePath1 = path.join(__dirname, "../data/name.txt")
-    fs.appendFileSync(nameFilePath1, `${inputName1}\n`)
-
-    const inputName2 = await input("What is your name?: ")
-    const nameFilePath2 = path.join(__dirname, "../data/name.txt")
-    fs.appendFileSync(nameFilePath2, `${inputName2}\n`)
-
-    const inputName3 = await input("What is your name?: ")
-    const nameFilePath3 = path.join(__dirname, "../data/name.txt")
-    fs.appendFileSync(nameFilePath3, `${inputName3}\n`)
-
-    const inputName4 = await input("What is your name?: ")
-    const nameFilePath4 = path.join(__dirname, "../data/name.txt")
-    fs.appendFileSync(nameFilePath4, `${inputName4}\n`)
-
-    fs.readFileSync()*/
-    //const x1 = 1
-    //console.log(x1)
-    //const x2 = 1
-    //console.log(x2)
-    const x = 1;
-    console.log(x);
-    console.log(x);
+    const inputName1 = yield (0, input_1.input)("What is your name?: ");
+    const nameFilePath = node_path_1.default.join(__dirname, "../data/name.txt");
+    node_fs_1.default.appendFileSync(nameFilePath, `${inputName1}\n`);
+    const inputName2 = yield (0, input_1.input)("What is your name?: ");
+    node_fs_1.default.appendFileSync(nameFilePath, `${inputName2}\n`);
+    const inputName3 = yield (0, input_1.input)("What is your name?: ");
+    node_fs_1.default.appendFileSync(nameFilePath, `${inputName3}\n`);
+    const inputName4 = yield (0, input_1.input)("What is your name?: ");
+    node_fs_1.default.appendFileSync(nameFilePath, `${inputName4}\n`);
 });
 app();
