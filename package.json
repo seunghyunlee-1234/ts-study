@@ -1,11 +1,13 @@
 {
   "name": "ts-study",
   "scripts": {
-    "start": "tsc && node dist/index.js"
+    "start": "tsc && node dist/index.js",
+    "pretty": "prettier --write \"src/**/*\""
   },
   "private": true,
   "dependencies": {
     "@types/node": "^22.7.5",
+    "prettier": "^3.3.3",
     "typescript": "^5.6.3"
   }
 }
