@@ -16,7 +16,7 @@ class User {
             return this.password;
         };
         this.changePassword = (newPassword) => {
-            return this.password = newPassword;
+            return (this.password = newPassword);
         };
         this.email = email;
         this.password = password;

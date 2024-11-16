@@ -3,10 +3,10 @@
 // is_student: 파이썬, ...
 // isStudent: 자바스크립트, 타입스크립트, ...
 // IsStudent: 자바, c#, ...
-const name1 = "이승현";
+const name1 = '이승현';
 const age1 = 11;
 const isStudent1 = true;
-const name2 = "삼승현";
+const name2 = '삼승현';
 const age2 = 31;
 const isStudent2 = false;
 // 연산자
@@ -27,12 +27,12 @@ console.log(`내 이름은 ${name2}이다. 나는 ${age2}살이다.`); // 삼승
 // json 객체
 // 키, 값
 const person1 = {
-    name: "이승현",
+    name: '이승현',
     age: 11,
     isStudent: true,
 };
 const person2 = {
-    name: "삼승현",
+    name: '삼승현',
     age: 31,
     isStudent: false,
 };
@@ -53,34 +53,34 @@ console.log(`내 이름은 ${people[1].name}이다. 나는 ${people[1].age}살�
 //     이것을 실행한다
 // }
 if (person2.isStudent === true) {
-    console.log("학생입니다");
+    console.log('학생입니다');
 }
 else {
-    console.log("학생이 아닙니다");
+    console.log('학생이 아닙니다');
 }
 const printProfile = () => {
     console.log(12345);
-    return "이승현";
+    return '이승현';
 };
 const y = printProfile();
-console.log("-------------------");
+console.log('-------------------');
 console.log(`내 이름은 ${people[0].name}이다. 나는 ${people[0].age}살이다.`); // 이승현의 프로필
 if (people[0].isStudent === true) {
-    console.log("학생입니다");
+    console.log('학생입니다');
 }
 else {
-    console.log("학생이 아닙니다");
+    console.log('학생이 아닙니다');
 }
-console.log("-------------------");
-console.log("-------------------");
+console.log('-------------------');
+console.log('-------------------');
 console.log(`내 이름은 ${people[1].name}이다. 나는 ${people[1].age}살이다.`); // 이승현의 프로필
 if (people[1].isStudent === true) {
-    console.log("학생입니다");
+    console.log('학생입니다');
 }
 else {
-    console.log("학생이 아닙니다");
+    console.log('학생이 아닙니다');
 }
-console.log("-------------------");
+console.log('-------------------');
 // 반복문
 // while (조건이 참이면) {
 //     이것을 반복한다
@@ -145,6 +145,6 @@ console.log(multiplyTwo(153621));
 // 나는 학생이다.
 const printprofile = (person) => {
     console.log(`My name is ${person.name}. I am ${person.age} years old.`);
-    console.log("I am a student.");
+    console.log('I am a student.');
 };
 printprofile(person2);
