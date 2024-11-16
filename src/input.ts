@@ -1,6 +1,7 @@
+import { wrap } from 'module';
 import readline from 'readline';
 
-export const input = (prompt: string) => {
+export const input = (prompt: string): Promise<string> => {
   const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout,

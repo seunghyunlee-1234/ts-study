@@ -1,7 +1,7 @@
 {
   "name": "ts-study",
   "scripts": {
-    "start": "tsc && node dist/index.js",
+    "start": "tsc && node dist/basic.js",
     "pretty": "prettier --write \"src/**/*\""
   },
   "private": true,

@@ -23,10 +23,10 @@ const nickname: string = '이승현';
 const age: number = 11;
 const isStudent: boolean = true;
 const person: personType = {
-  nickname: "이승현",
+  nickname: '이승현',
   age: 11,
   isStudent: true,
-}
+};
 console.log(nickname);
 console.log(age);
 console.log(isStudent);
@@ -38,11 +38,13 @@ console.log(`내 이름은 ${person.nickname}이다. 나는 ${person.age}살이�
 let z = 1;
 z = z + 100;
 z += 100;
-console.log(z)
+console.log(z);
 
 // 배열
 const people = [person];
-console.log(`내 이름은 ${people[0].nickname}이다. 나는 ${people[0].age}살이다.`); // 이승현의 프로필
+console.log(
+  `내 이름은 ${people[0].nickname}이다. 나는 ${people[0].age}살이다.`,
+); // 이승현의 프로필
 
 // 조건문
 // if (이 조건이 참이라면) {
@@ -67,7 +69,7 @@ const makeUserProfileString = (user: personType): string => {
   }
 };
 const profileString = makeUserProfileString(person);
-console.log(profileString)
+console.log(profileString);
 
 // 반복문
 let i = 1;
