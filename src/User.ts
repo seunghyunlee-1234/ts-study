@@ -1,37 +1,20 @@
-// OOP: Object Oriented Programming
-
-// class: frame
 class User {
-  // instance data
-  private email: string;
-  private password: string;
+  // 인스턴스 변수
   private nickname: string;
   private age: number;
+  private isStudent: boolean;
 
-  // special method - constructor
-  constructor(email: string, password: string, nickname: string, age: number) {
-    this.email = email;
-    this.password = password;
+  // 생성자
+  constructor(nickname: string, age: number, isStudent: boolean) {
     this.nickname = nickname;
     this.age = age;
+    this.isStudent = isStudent;
   }
-  // instance method
-
-  getEmail = () => {
-    return this.email;
-  };
-  getAge = () => {
-    return this.age;
-  };
-  getPassword = () => {
-    return this.password;
-  };
-  changePassword = (newPassword: string) => {
-    return (this.password = newPassword);
-  };
 }
 
-// object: user1, user2 ...
+const user1 = new User("이승현", 11, true);
+console.log(user1)
+const user2 = new User("박승현", 19, true);
+console.log(user2)
 
-// user1 instance
 export default User;

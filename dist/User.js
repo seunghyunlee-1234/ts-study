@@ -1,29 +1,15 @@
 "use strict";
-// OOP: Object Oriented Programming
 Object.defineProperty(exports, "__esModule", { value: true });
-// class: frame
 class User {
-    // special method - constructor
-    constructor(email, password, nickname, age) {
-        // instance method
-        this.getEmail = () => {
-            return this.email;
-        };
-        this.getAge = () => {
-            return this.age;
-        };
-        this.getPassword = () => {
-            return this.password;
-        };
-        this.changePassword = (newPassword) => {
-            return (this.password = newPassword);
-        };
-        this.email = email;
-        this.password = password;
+    // 생성자
+    constructor(nickname, age, isStudent) {
         this.nickname = nickname;
         this.age = age;
+        this.isStudent = isStudent;
     }
 }
-// object: user1, user2 ...
-// user1 instance
+const user1 = new User("이승현", 11, true);
+console.log(user1);
+const user2 = new User("박승현", 19, true);
+console.log(user2);
 exports.default = User;

@@ -12,7 +12,8 @@ console.log(`x = ${x}, y = ${y}`);
 // 문자열: string
 // 숫자: number
 // 불린: boolean
-// 커스텀 타입: 예시: json 객체: {키: 값}
+// 복합 타입
+// 복합 타입 1: json 객체: {키: 값}
 type personType = {
   nickname: string;
   age: number;
@@ -25,6 +26,11 @@ const isStudent: boolean = true;
 const person: personType = {
   nickname: '이승현',
   age: 11,
+  isStudent: true,
+};
+const person2: personType = {
+  nickname: '박승현',
+  age: 19,
   isStudent: true,
 };
 console.log(nickname);

@@ -15,6 +15,11 @@ const person = {
     age: 11,
     isStudent: true,
 };
+const person2 = {
+    nickname: '박승현',
+    age: 19,
+    isStudent: true,
+};
 console.log(nickname);
 console.log(age);
 console.log(isStudent);
@@ -74,10 +79,3 @@ for (let i = 1; i < 10; i++) {
 for (let i = 1; i < 10; i++) {
     console.log(`5 x ${i} = ${5 * i}`);
 }
-const calculate = (num) => {
-    num += 1;
-    num *= 2;
-    return num;
-};
-const result = calculate(1000);
-console.log(result);
