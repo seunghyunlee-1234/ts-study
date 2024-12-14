@@ -1,59 +1,46 @@
 import { input } from './input';
 import fs from 'node:fs';
-import path from 'node:path';
+import { checkEmailExistence, checkUser } from './user-service';
+import { AuthService } from './service/auth-service';
 
+const authService = new AuthService();
 const app = async () => {
-  const choice = await input('Are you signing up(0) or logging in(1)?: ');
-  const numberChoice = parseInt(choice);
-  if (numberChoice === 0) {
-    const email = await input('What is your email?:');
-    const password = await input('What is your password?:');
-    const username = await input('What is your username?:');
-    const isEmailAlreadyExist = checkEmailExistence(email, 'data/users.txt');
-    if (isEmailAlreadyExist) {
-      console.log("Email already exist!");
+  // 인증 화면
+  while (true) {
+    const choice = await input(
+      'Are you signing up(0) or logging in(1)? or exit(2):  ',
+    );
+    const numberChoice = parseInt(choice);
+    if (numberChoice === 0) {
+      const email = await input('What is your email?:');
+      const password = await input('What is your password?:');
+      const username = await input('What is your username?:');
+      const isSignUpSuccess = authService.signUp(email, password, username);
+      if (isSignUpSuccess) {
+        console.log('Sign Up Complete!');
+      } else {
+        console.log('Email already exist!');
+      }
+    } else if (numberChoice === 1) {
+      const email = await input('What is your email?:');
+      const password = await input('What is your password?:');
+      const isSignInSuccess = authService.signIn(email, password);
+      if (isSignInSuccess) {
+        console.log('Welcome');
+        break;
+      } else {
+        console.log('Invalid Email or Password!');
+      }
     } else {
-      fs.appendFileSync('data/users.txt', `${email} ${password} ${username}\n`);
-      console.log("Sign Up Complete!")
-    }
-  } else {
-    const email = await input('What is your email?:');
-    const password = await input('What is your password?:');
-    const isUserExist = checkUser(email, password, 'data/users.txt');
-    if (isUserExist) {
-      console.log("Welcome");
-    } else {
-      console.log("Invalid Email or Password. Please sign up first!");
+      console.log('프로그램을 종료합니다.');
+      process.exit();
     }
   }
+
+  // 홈 화면
+  console.log('반복문이 종료되었다!');
+  // 게시글 작성해보기
+  // 게시글 삭제해보기
+  // 게시글 수정해보기
 };
 app();
-
-const checkEmailExistence = (
-    email: string,
-    userFilePath: string,
-): boolean => {
-  const result = fs.readFileSync(userFilePath, 'utf-8');
-  const userList = result.split('\n');
-  for (let i = 0; i < userList.length; i++) {
-    if (userList[i].split(" ")[0] === email) {
-      return true;
-    }
-  }
-  return false;
-};
-
-const checkUser = (
-    email: string,
-    password: string,
-    userFilePath: string,
-): boolean => {
-  const result = fs.readFileSync(userFilePath, 'utf-8');
-  const userList = result.split('\n');
-  for (let i = 0; i < userList.length; i++) {
-    if (userList[i].split(" ")[0] === email && userList[i].split(" ")[1] === password) {
-      return true;
-    }
-  }
-  return false;
-};
