@@ -1,7 +1,7 @@
 import { input } from './input';
 import { AuthService } from './service/auth-service';
 
-const authService = new AuthService();
+const authService: AuthService = new AuthService();
 const app = async () => {
   while (true) {
     const choice = await input(
