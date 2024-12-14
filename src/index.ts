@@ -1,11 +1,8 @@
 import { input } from './input';
-import fs from 'node:fs';
-import { checkEmailExistence, checkUser } from './user-service';
 import { AuthService } from './service/auth-service';
 
 const authService = new AuthService();
 const app = async () => {
-  // 인증 화면
   while (true) {
     const choice = await input(
       'Are you signing up(0) or logging in(1)? or exit(2):  ',
