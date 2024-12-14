@@ -8,8 +8,8 @@ class User {
         this.isStudent = isStudent;
     }
 }
-const user1 = new User("이승현", 11, true);
+const user1 = new User('이승현', 11, true);
 console.log(user1);
-const user2 = new User("박승현", 19, true);
+const user2 = new User('박승현', 19, true);
 console.log(user2);
 exports.default = User;
